@@ -25,10 +25,11 @@ const Hero = () => {
                         <h2 className="text-yellow-500">Full Stack Developer</h2>
                         <br />
                         <div className="flex justify-end">
-                            <button className="btn border-yellow-700 bg-yellow-600 text-gray-200 hover:bg-yellow-500">
+                            <a href="mailto:pjmasoka@gmail.com" className="btn border-yellow-700 bg-yellow-600 text-gray-200 hover:bg-yellow-500">
                                 Hire Me
-                            </button>
+                            </a>
                         </div>
+
                         <div className="mt-10 flex flex-col gap-10">
                             <div
                                 className="flex w-80 items-center gap-5"
@@ -49,11 +50,11 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className="mb-4 mt-16 h-96 md:-mb-16 md:h-full">
-                         <Image
+                        <Image
                             src={HeroSVG}
                             alt="Hero"
                             className="h-full rounded-xl bg-gray-950 object-cover"
-                        /> 
+                        />
                     </div>
                 </div>
             </div>

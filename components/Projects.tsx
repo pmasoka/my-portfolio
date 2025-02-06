@@ -1,14 +1,20 @@
 "use client";
+import { useRouter } from "next/navigation"; // Import useRouter
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { projectsItems } from "@/data";
-
 import ProjectsSVG from "@/public/svg/projects.svg";
 import "swiper/css";
 import "swiper/css/pagination";
 
 const Projects = () => {
+  const router = useRouter(); // Initialize the router
+
+  const handleReadMore = (slug: string) => {
+    router.push(`/projects/${slug}`); // Redirect to the respective project page based on slug
+  };
+
   return (
     <section className="bg-gray-800 pb-4" id="projects">
       <div className="md:container px-5 pt-14 min-h-screen md:min-h-min flex flex-col justify-between">
@@ -44,7 +50,10 @@ const Projects = () => {
                   <h5 className="font-bold font-Poppins text-gray-100">
                     {item.title}
                   </h5>
-                  <button className="font-bold text-gray-500 self-end">
+                  <button
+                    className="font-bold text-gray-500 self-end"
+                    onClick={() => handleReadMore(item.slug)} // Call the redirect function
+                  >
                     READ MORE
                   </button>
                 </div>
